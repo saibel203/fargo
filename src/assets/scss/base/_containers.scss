@@ -1,0 +1,9 @@
+.base-container {
+  margin: 0 30px;
+}
+
+@media screen and (max-width: 922px) {
+  .base-container {
+    margin: 0 15px;
+  }
+}
