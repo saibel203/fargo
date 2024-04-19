@@ -4,6 +4,8 @@
   align-items: center;
   gap: 100px;
   margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(#000, .5);
 
   &__logo {
     svg {
@@ -27,6 +29,10 @@
           transition: color .2s ease;
           font-size: 18px;
           font-weight: 400;
+
+          &.active {
+            color: rgba(#1e90ff, .9);
+          }
 
           &:hover {
             color: #222020;
@@ -80,6 +86,7 @@
   text-decoration: none;
   font-size: 30px;
   display: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
