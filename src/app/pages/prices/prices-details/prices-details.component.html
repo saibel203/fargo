@@ -1,0 +1,24 @@
+@for (priceType of priceTypes; track $index) {
+  <div class="prices__content-item">
+    <img 
+      [src]="imageUrls[priceType]" 
+      alt="Ціни на послуги стрижки та укладок" 
+      class="prices__content-item-image"
+    >
+    <ul class="prices__content-item-list">
+      @for (price of prices; track $index) {
+        @if (price.priceType === priceType) {
+          <li class="prices__content-item-list-item">
+            <div class="prices__content-item-list-item-top">
+              <span>{{ price.title }}</span>
+              <span>{{ price.price }} ₴</span>
+            </div>
+            <div class="prices__content-item-list-item-bottom">
+              <span>{{ price.description }}</span>
+            </div>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+}

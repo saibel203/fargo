@@ -1,0 +1,16 @@
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  &__title {
+    color: #856A65;
+    font-size: 60px;
+    font-family: 'Cormorant Garamond', 'Roboto', 'Open Sans', sans-serif;
+  }
+
+  &__content {
+    width: 80%;
+  }
+}
