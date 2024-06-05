@@ -1,0 +1,89 @@
+@import './contrast.scss';
+
+$primary-palette: mat.define-palette((
+  100: #FAD273,
+  500: #FAC448,
+  700: #F2B31F,
+  A100: #3C84FF,
+  A200: #2263D1,
+  A300: #154AA6,
+  contrast: (
+    100: black,
+    500: black,
+    700: black,
+    A100: white,
+    A200: white,
+    A300: white,
+  )
+));
+
+$secondary-palette: mat.define-palette((
+  100: #000000,
+  200: #101010,
+  300: #1E1E1E,
+  400: #858585,
+  500: #DCDCDC,
+  600: #F9F9F9,
+  700: #FFFFFF,
+  contrast: (
+    100: white,
+    200: white,
+    300: white,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+  )
+));
+
+$dark-primary: mat.define-palette((
+  100: mat.get-color-from-palette($primary-palette, 100),
+  500: mat.get-color-from-palette($primary-palette, 500),
+  700: mat.get-color-from-palette($primary-palette, 700),
+  A100: mat.get-color-from-palette($secondary-palette, 400),
+  contrast: (
+    100: mat.get-color-from-palette($primary-palette, 100-contrast),
+    500: mat.get-color-from-palette($primary-palette, 500-contrast),
+    700: mat.get-color-from-palette($primary-palette, 700-contrast),
+    A100: black,
+  )
+));
+
+$light-primary: mat.define-palette((
+  100: mat.get-color-from-palette($primary-palette, A100),
+  500: mat.get-color-from-palette($primary-palette, A200),
+  700: mat.get-color-from-palette($primary-palette, A300),
+  A100: mat.get-color-from-palette($secondary-palette, 400),
+  contrast: (
+    100: mat.get-color-from-palette($primary-palette, A100-contrast),
+    500: mat.get-color-from-palette($primary-palette, A200-contrast),
+    700: mat.get-color-from-palette($primary-palette, A300-contrast),
+    A100: white,
+  )
+));
+
+$dark-accent: mat.define-palette((
+  100: mat.get-color-from-palette($primary-palette, 100),
+  500: mat.get-color-from-palette($primary-palette, 500),
+  700: mat.get-color-from-palette($primary-palette, 700),
+  A100: mat.get-color-from-palette($secondary-palette, 400),
+  contrast: (
+    100: white,
+    500: white,
+    700: white,
+    A100: white,
+  )
+));
+
+$light-accent: mat.define-palette((
+  100: mat.get-color-from-palette($primary-palette, A100),
+  500: mat.get-color-from-palette($primary-palette, A200),
+  700: mat.get-color-from-palette($primary-palette, A300),
+  A100: mat.get-color-from-palette($secondary-palette, 400),
+  contrast: (
+    100: black,
+    500: black,
+    700: black,
+    A100: black,
+  )
+));

@@ -1,0 +1,24 @@
+.masters__list-item {
+  &-image {
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  &-details {
+    font-family: 'Cormorant Garamond';
+    color: #856A65;
+    font-style: normal;
+
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 27px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+}

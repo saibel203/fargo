@@ -1,0 +1,129 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(#000, .5);
+
+  &__logo {
+    svg {
+      width: 50px;
+    }
+  }
+
+  &__navigation {
+    &-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-item {
+        &:not(:last-child) {
+          padding-right: 50px;
+        }
+
+        a {
+          color: #856A65;
+          transition: color .2s ease;
+          font-size: 18px;
+          font-weight: 400;
+
+          &.active {
+            color: rgba(#1e90ff, .9);
+          }
+
+          &:hover {
+            color: #222020;
+          }
+        }
+      }
+    }
+
+    &-close {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.list-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  max-height: 300px;
+  background-color: #f3f3f3;
+}
+
+.body-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  transition: all .4s ease;
+}
+
+.hamburger-item {
+  color: #808080;
+  text-decoration: none;
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .header__navigation-list {
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px;
+    z-index: 2;
+
+    li {
+      padding: 20px 100px;
+      transition: background-color .2s ease, color .2s ease, border-radius .2s ease;
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+
+        a {
+          color: #636363
+        }
+      }
+
+      a {
+        color: #010101;
+      }
+    }
+  }
+
+  .hamburger-item {
+    display: flex;
+  }
+
+  .hide {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import './themes/palettes.scss';
+@import './themes/themes.scss';
+@import './themes/mixin.scss';
+
+@include init-theme($light-theme);
+
+.dark-theme {
+  @include update-theme($dark-theme);
+}
+
+.light-theme {
+  @include update-theme($light-theme);
+}

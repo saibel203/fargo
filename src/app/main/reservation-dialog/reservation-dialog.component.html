@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Форма запису на наші послуги</h2>
+<mat-dialog-content class="dialog-content" [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Ваше ім'я</mat-label>
+    <input formControlName="name" matInput placeholder="Ваше ім'я">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Ваш телефон</mat-label>
+    <input formControlName="phone" matInput placeholder="Ваш телефон">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Оберіть послугу</mat-label>
+    <mat-select formControlName="serviceId">
+      @for (service of dialogData.services; track $index) {
+        <mat-option [value]="service.id">{{ service.title }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Оберіть час</mat-label>
+    <mat-select formControlName="time">
+      @for (time of dialogData.times; track $index) {
+        <mat-option [value]="time">{{ time }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="action-buttons">
+  <button mat-button mat-dialog-close (click)="reserve()" [disabled]="!form.valid">Забронювани</button>
+  <button mat-button mat-dialog-close (click)="close()">Відмінити</button>
+</mat-dialog-actions>
