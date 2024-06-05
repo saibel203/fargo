@@ -1,4 +1,26 @@
 <main class="main base-container">
+  <section class="main__about">
+    <div class="main__about-image">
+      <img src="assets/images/backgrounds/main-bg.png" alt="Main background image" class="main__about-image-item">
+      <div class="main__about-image-content">
+        <h1>Салон Краси</h1>
+        <h1>«Fargo»</h1>
+      </div>
+    </div>
+    <div class="main__about-content">
+      <p>В салоні краси <strong>Fargo</strong> ми зібрали докупи все те, що створює атмосферу комфорту і робить ваш візит максимально приємним</p>
+      <p>Ми спеціалісти з краси з досвідом більше <strong>12 років</strong></p>
+      <p><strong>Наші фахівці постійно навчаються у найкращих світових зірок</strong> перукарського мистецтва, косметології, підвищують свій рівень на міжнародних семінарах.</p>
+      <button 
+        mat-flat-button 
+        color="primary"
+        class="button"
+        (click)="openReservationDialog()"
+      >
+        Запишись <strong>Online</strong>
+      </button>
+    </div>
+  </section>
   <section class="main__greeting">
     <div class="main__greeting-image">
       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -31,5 +53,12 @@
     <img src="assets/images/icons/partners/oribe-logo.svg" alt="Oribe partner logo" class="main__logos-logo">
     <img src="assets/images/icons/partners/alterna-logo.svg" alt="Alterna partner logo" class="main__logos-logo">
     <img src="assets/images/icons/partners/aldo-coppola-logo.svg" alt="Aldo Coppola partner logo" class="main__logos-logo">
+  </section>
+  <section class="main__services">
+    @for(service of services$ | async; track $index) {
+      <app-service-item
+        [service]="service"
+      ></app-service-item>
+    }
   </section>
 </main>

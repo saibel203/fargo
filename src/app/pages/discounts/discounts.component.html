@@ -1,0 +1,12 @@
+<section class="discounts">
+  <h2 class="discounts__title">Акції</h2>
+  <ul class="discounts__list">
+    @for(discount of discounts$ | async; track $index) {
+      <li class="discounts__list-item">
+        <app-discount-item
+          [discount]="discount"  
+        ></app-discount-item>
+      </li>
+    }
+  </ul>
+</section>

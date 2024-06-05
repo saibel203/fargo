@@ -38,7 +38,12 @@
 
     span {
       font-weight: 700;
-      font-size: 35px;
+      font-size: 35px;  
+
+      &:first-child {
+        max-width: 250px;
+        line-height: 1;
+      }
     }
   }
 

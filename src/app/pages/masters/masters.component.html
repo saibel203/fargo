@@ -1,0 +1,12 @@
+<section class="masters base-container">
+  <h2 class="masters__title">Наші Майстри</h2>
+  <ul class="masters__list">
+    @for(master of masters$ | async; track $index) {
+      <li class="masters__list-item">
+        <app-master-item
+          [master]="master"
+        ></app-master-item>
+      </li>
+    }
+  </ul>
+</section>

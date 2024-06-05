@@ -1,4 +1,9 @@
-p {
+@use '@angular/material' as mat;
+@import '../../styles.scss';
+
+p,
+h1,
+h2 {
   margin: 0;
 }
 
@@ -6,6 +11,73 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 75px;
+
+  &__about {
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: center;
+    max-height: 800px;
+
+    &-image {
+      position: relative;
+
+      &-item {
+        max-height: 800px
+      }
+
+      &-content {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+
+        h1 {
+          color: #cabebc;
+          font-size: 72px;
+          font-weight: 700;
+          text-align: center;
+          font-family: 'Caudex', 'Cormorant Garamond', 'Roboto', 'Open Sans', sans-serif;
+          text-transform: capitalize;
+
+          &:last-child {
+            margin-top: 30px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    &-content {
+      background-color: #856A65;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 30px;
+
+      ::ng-deep {
+        .mdc-button::before {
+          background-color: #CABEBC !important;
+        }
+
+        .mdc-button:hover::before {
+          background-color: #CD8B7D !important;
+        }
+      }
+
+      p {
+        color: #fff;
+        font-family: 'Cormorant Garamond', 'Roboto', 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 30px;
+
+        strong {
+          font-weight: 700;
+        }
+      }
+    }
+  }
 
   &__greeting {
     max-width: 1000px;
@@ -40,5 +112,11 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 100px;
+  }
+
+  &__services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

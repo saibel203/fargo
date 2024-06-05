@@ -1,0 +1,100 @@
+@mixin color($theme, $base, $hue, $opacity) {
+
+  .mat-mdc-button-persistent-ripple::before,
+  .mat-ripple {
+    display: none;
+  }
+
+  background: none;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background-color: mat.get-theme-color($theme, $base, $hue);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    opacity: $opacity;
+  }
+
+  color: mat.get-theme-color($theme, $base, contrast($hue));
+}
+
+@function opacity($base, $val) {
+  @if $base ==primary {
+    @return 1;
+  }
+
+  @if $base ==accent {
+    @return $val;
+  }
+}
+
+@mixin button($theme, $base, $default: 700, $hover: 500, $active: 100, $disabled: A100) {
+  border-radius: 12px;
+
+  .mat-icon {
+    transform: scale(1, calc(1.1));
+    font-size: 24px;
+    position: relative;
+    bottom: 3px;
+  }
+
+  &:not(:disabled) {
+    @include color($theme, $base, $default, opacity($base, 0));
+  }
+
+  &:hover {
+    @include color($theme, $base, $hover, opacity($base, 0.1));
+  }
+
+  &:active {
+    @include color($theme, $base, $active, opacity($base, 0.2));
+  }
+
+  &:disabled {
+    @include color($theme, $base, $disabled, opacity($base, 0));
+  }
+}
+
+@mixin update-theme($theme) {
+  .mat-primary[mat-flat-button] {
+    @include button($theme, primary);
+  }
+
+  .mat-primary[mat-stroked-button] {
+    @include button($theme, accent);
+
+    @if $theme ==$dark-theme {
+      border: 1px solid white;
+    }
+
+    @if $theme ==$light-theme {
+      border: 1px solid black;
+    }
+  }
+
+  [no-text] {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    padding: 0 !important;
+    position: relative;
+
+    .mat-icon {
+      position: relative;
+      left: 3px;
+    }
+  }
+
+  @include mat.button-color($theme);
+  // add other elemets if needed
+}
+
+@mixin init-theme($theme) {
+  @include mat.all-component-themes($theme);
+  @include update-theme($theme);
+}

@@ -1,0 +1,53 @@
+@function contrast($hue) {
+  @if $hue ==50 {
+    @return 50-contrast;
+  }
+
+  @if $hue ==100 {
+    @return 100-contrast;
+  }
+
+  @if $hue ==200 {
+    @return 200-contrast;
+  }
+
+  @if $hue ==300 {
+    @return 300-contrast;
+  }
+
+  @if $hue ==400 {
+    @return 400-contrast;
+  }
+
+  @if $hue ==500 {
+    @return 500-contrast;
+  }
+
+  @if $hue ==600 {
+    @return 600-contrast;
+  }
+
+  @if $hue ==700 {
+    @return 700-contrast;
+  }
+
+  @if $hue ==800 {
+    @return 800-contrast;
+  }
+
+  @if $hue ==900 {
+    @return 900-contrast;
+  }
+
+  @if $hue ==A100 {
+    @return A100-contrast;
+  }
+
+  @if $hue ==A200 {
+    @return A200-contrast;
+  }
+
+  @if $hue ==A300 {
+    @return A400-contrast;
+  }
+}
